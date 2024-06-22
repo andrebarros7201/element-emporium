@@ -1,0 +1,52 @@
+.shop{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.shopItem{
+
+    a{
+        cursor: pointer;
+        background-color: white;
+        width: 450px;
+        height: 200px;
+        border:3px solid #242424;
+        display: flex;
+        flex-flow: row nowrap;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover{
+            transform: translate(-10px, -10px);
+            box-shadow: 1px 1px 1px 1px #242424;
+            text-decoration: none;
+        }
+
+        & > div{
+            flex: 2;
+            color: #242424;
+            padding-left: 1.5rem;
+            padding-top: 0;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+
+            & > h2{
+                font-size: 1rem;
+                max-height: 2rem;
+                text-overflow: ellipsis;
+            }
+        }
+
+        &>img{
+            flex:1;
+            width: 33%;
+            aspect-ratio: initial;
+        }
+    }
+
+
+}
