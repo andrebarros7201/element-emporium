@@ -1,5 +1,24 @@
 nav{
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #242424;
+    padding: 0 2rem;
+    color: #242424;
+}
+
+nav > *{
+    flex: 1;
+}
+
+nav > :first-child{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+nav > :last-child{
+    text-align: right;
 }
 
 ul{
@@ -7,9 +26,30 @@ ul{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap:1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: min-content;
 }
 
-li{
+ul > li{
     list-style: none;
+    color: #242424;
 }
+
+h1{
+    color: #242424;
+    text-decoration: none;
+}
+
+a{
+    color: #242424;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+

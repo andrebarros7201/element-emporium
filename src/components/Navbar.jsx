@@ -3,14 +3,20 @@ import "../styles/navbar.css";
 
 export default function Navbar() {
   return (
-    <header>
-      <nav>
-        <ul>
+    <nav>
+      <div>
+        <Link to="/">Element Emporium</Link>
+      </div>
+
+      <ul>
+        <li>
           <Link to="/">Home</Link>
+        </li>
+        <li>
           <Link to="shop">Shop</Link>
-          <li>Cart</li>
-        </ul>
-      </nav>
-    </header>
+        </li>
+      </ul>
+      <h2>Cart</h2>
+    </nav>
   );
 }
