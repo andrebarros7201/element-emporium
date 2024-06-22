@@ -3,53 +3,63 @@ nav{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     border-bottom: 3px solid #242424;
     padding: 0 2rem;
     color: #242424;
-}
 
-nav > *{
-    flex: 1;
-}
+    & > *{
+        flex: 1;
+    }
 
-nav > :first-child{
-    font-weight: bold;
-    font-size: 2rem;
-}
+    & > :first-child{
+        font-weight: bold;
+        font-size: 2rem;
+    }
 
-nav > :last-child{
-    text-align: right;
+    & > :last-child{
+        text-align: right;
+        width: min-content;
+    }
 }
 
 ul{
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     gap:1rem;
     font-weight: bold;
     font-size: 1.5rem;
     width: min-content;
-}
 
-ul > li{
-    list-style: none;
-    color: #242424;
-}
-
-h1{
-    color: #242424;
-    text-decoration: none;
+    & > li{
+        list-style: none;
+        color: #242424;
+    }
 }
 
 a{
     color: #242424;
     text-decoration: none;
+
+    &:hover{
+        text-decoration: underline;
+    }
 }
 
-a:hover{
-    text-decoration: underline;
+.navbarMainLink{
+    color: #242424;
+    text-decoration: none;
+    text-wrap: nowrap;
+    width: fit-content;
+
+    &:hover{
+        text-decoration: underline;
+    }
 }
+
 
 
 
