@@ -18,6 +18,7 @@
         display: flex;
         flex-flow: row nowrap;
         transition: transform 0.2s ease-in-out;
+        padding: 1rem;
 
         &:hover{
             transform: translate(-10px, -10px);
