@@ -45,9 +45,7 @@
         &>img{
             flex:1;
             width: 33%;
-            aspect-ratio: initial;
+            height: auto;
         }
     }
-
-
 }

@@ -1,7 +1,8 @@
 import "./App.css";
 import Navbar from "./components/Navbar.jsx";
 import { Outlet } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import FunctionContext from "./functionContext.js";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -38,10 +39,30 @@ function App() {
     fetchData();
   }, []);
 
+  const addToCart = (item, quantity) => {
+    setCart((prev) => [
+      ...prev,
+      {
+        title: item.title,
+        quantity: quantity,
+        price: item.price,
+        image: item.image,
+      },
+    ]);
+  };
+
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
+
+  const functionRef = useRef(addToCart);
+
   return (
     <div className="app">
-      <Navbar />
-      <Outlet context={[products, categories, cart, loading, error]} />
+      <FunctionContext.Provider value={{ functionRef }}>
+        <Navbar />
+        <Outlet context={[products, categories, cart, loading, error]} />
+      </FunctionContext.Provider>
     </div>
   );
 }

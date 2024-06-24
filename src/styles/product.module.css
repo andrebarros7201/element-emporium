@@ -42,7 +42,7 @@
         padding-bottom: 1rem;
         padding-right: 1rem;
         & p{
-            text-transform: capitalize;
+            text-transform: full-size-kana;
         }
 
     }
@@ -61,4 +61,10 @@
         background-color: #242424;
         color: white;
     }
+}
+
+.product-form{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
 }

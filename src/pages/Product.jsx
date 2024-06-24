@@ -1,12 +1,26 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import styles from "../styles/product.module.css";
+import FunctionContext from "../functionContext.js";
 
 export default function Product() {
   const { id } = useParams();
+  const { functionRef } = useContext(FunctionContext);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+
+  const addToCart = functionRef.current;
+
+  const handleQuantityChange = (e) => {
+    setQuantity(e.target.value);
+  };
+
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    addToCart(data, quantity);
+  };
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
@@ -35,7 +49,21 @@ export default function Product() {
           <div className={styles["right-bottom"]}>
             <p>{data.description}</p>
             <h3>{data.price}€</h3>
-            <button className={styles["add-to-cart"]}>Add To Cart</button>
+            <form
+              className={styles["product-form"]}
+              onSubmit={(e) => handelSubmit(e)}
+            >
+              <input
+                type="number"
+                required={true}
+                value={quantity}
+                min={1}
+                onChange={(e) => handleQuantityChange(e)}
+              />
+              <button className={styles["add-to-cart"]} type={"submit"}>
+                Add To Cart
+              </button>
+            </form>
           </div>
         </div>
       </div>
