@@ -1,20 +1,30 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
+import { useOutletContext, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import styles from "../styles/product.module.css";
-import FunctionContext from "../functionContext.js";
 
 export default function Product() {
   const { id } = useParams();
-  const { functionRef } = useContext(FunctionContext);
+  const [cart, setCart] = useOutletContext();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [quantity, setQuantity] = useState(1);
 
-  const addToCart = functionRef.current;
-
   const handleQuantityChange = (e) => {
     setQuantity(e.target.value);
+  };
+
+  const addToCart = (item, quantity) => {
+    setCart((prev) => [
+      ...prev,
+      {
+        id: item.id,
+        name: item.title,
+        price: item.price,
+        quantity: Number(quantity),
+        image: item.image,
+      },
+    ]);
   };
 
   const handelSubmit = (e) => {
