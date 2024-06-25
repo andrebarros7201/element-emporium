@@ -7,7 +7,7 @@ export default function Shop() {
   return (
     <section className={styles.shop}>
       {products.map((item) => (
-        <ShopItem key={item.id} item={item} />
+        <ShopItem item={item} key={item.id} />
       ))}
     </section>
   );

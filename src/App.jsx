@@ -44,7 +44,7 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar />
+      <Navbar cart={cart} />
       <Outlet
         context={{ products, categories, loading, error, cart, setCart }}
       />
