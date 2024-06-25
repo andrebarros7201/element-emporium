@@ -4,7 +4,7 @@ import styles from "../styles/product.module.css";
 
 export default function Product() {
   const { id } = useParams();
-  const [cart, setCart] = useOutletContext();
+  const { cart, setCart } = useOutletContext();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,16 +15,23 @@ export default function Product() {
   };
 
   const addToCart = (item, quantity) => {
-    setCart((prev) => [
-      ...prev,
-      {
-        id: item.id,
-        name: item.title,
-        price: item.price,
-        quantity: Number(quantity),
-        image: item.image,
-      },
-    ]);
+    if (cart.filter((x) => x.id === item.id).length === 0) {
+      setCart((prev) => [
+        ...prev,
+        {
+          id: item.id,
+          name: item.title,
+          price: item.price,
+          quantity: Number(quantity),
+          image: item.image,
+        },
+      ]);
+    } else {
+      const itemIndex = cart.findIndex((x) => x.id === item.id);
+      const updatedCart = [...cart];
+      updatedCart[itemIndex].quantity += Number(quantity);
+      setCart(updatedCart);
+    }
   };
 
   const handelSubmit = (e) => {
