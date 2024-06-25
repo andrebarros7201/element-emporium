@@ -1,4 +1,4 @@
-nav{
+nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -8,56 +8,61 @@ nav{
     padding: 0 2rem;
     color: #242424;
 
-    & > *{
+    & > * {
         flex: 1;
     }
 
-    & > :first-child{
+    & > :first-child {
         font-weight: bold;
         font-size: 2rem;
     }
 
-    & > :last-child{
+    & > :last-child {
         text-align: right;
         width: min-content;
     }
 }
 
-ul{
+ul {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap:1rem;
+    gap: 1rem;
     font-weight: bold;
     font-size: 1.5rem;
     width: min-content;
 
-    & > li{
+    & > li {
         list-style: none;
         color: #242424;
     }
 }
 
-a{
+a {
     color: #242424;
     text-decoration: none;
 
-    &:hover{
+    &:hover {
         text-decoration: underline;
     }
 }
 
-.navbarMainLink{
+.navbarMainLink {
     color: #242424;
     text-decoration: none;
     text-wrap: nowrap;
     width: fit-content;
 
-    &:hover{
+    &:hover {
         text-decoration: underline;
     }
+}
+
+.cart-link {
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 

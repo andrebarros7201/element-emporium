@@ -1,0 +1,53 @@
+.checkout {
+    color: #242424;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.checkout-item {
+    height: 200px;
+    width: 700px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    border: 3px solid #242424;
+    background-color: white;
+    gap: 1rem;
+    padding: 1rem;
+
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left > img {
+    width: auto;
+    height: 170px;
+    aspect-ratio: initial;
+}
+
+.right {
+    flex: 2;
+}
+
+.checkout-button {
+    background-color: white;
+    border: 2px solid #242424;
+    color: #242424;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 2rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #242424;
+        color: white;
+    }
+}

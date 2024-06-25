@@ -38,10 +38,6 @@ function App() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
-
   return (
     <div className="app">
       <Navbar cart={cart} />
