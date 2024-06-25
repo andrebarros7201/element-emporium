@@ -9,7 +9,7 @@ export function ShopItem({ item }) {
         <img src={item.image} alt={item.title} />
         <div>
           <h2>{item.title}</h2>
-          <h2>{item.price}€</h2>
+          <h2>Price: {parseFloat(item.price).toFixed(2)}€</h2>
         </div>
       </Link>
     </div>
