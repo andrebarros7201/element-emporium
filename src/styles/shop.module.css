@@ -1,4 +1,4 @@
-.shop{
+.shop {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -7,26 +7,26 @@
     padding: 1.5rem;
 }
 
-.shopItem{
+.shopItem {
 
-    a{
+    a {
         cursor: pointer;
         background-color: white;
         width: 450px;
         height: 200px;
-        border:3px solid #242424;
+        border: 3px solid #242424;
         display: flex;
         flex-flow: row nowrap;
         transition: transform 0.2s ease-in-out;
         padding: 1rem;
 
-        &:hover{
+        &:hover {
             transform: translate(-10px, -10px);
             box-shadow: 1px 1px 1px 1px #242424;
             text-decoration: none;
         }
 
-        & > div{
+        & > div {
             flex: 2;
             color: #242424;
             padding-left: 1.5rem;
@@ -35,17 +35,18 @@
             flex-flow: column nowrap;
             justify-content: space-between;
 
-            & > h2{
+            & > h2 {
                 font-size: 1rem;
                 max-height: 2rem;
                 text-overflow: ellipsis;
             }
         }
 
-        &>img{
-            flex:1;
+        & > img {
+            flex: 1;
             width: 33%;
             height: auto;
+            object-fit: contain;
         }
     }
 }

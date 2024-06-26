@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .wrapper {
@@ -14,6 +13,7 @@
     color: #242424;;
     border: 3px solid #242424;
     gap: 1rem;
+    margin-top: 2rem;
 }
 
 .left {
@@ -28,6 +28,7 @@
         width: 100%;
         max-height: 300px;
         height: auto;
+        object-fit: contain;
     }
 }
 
