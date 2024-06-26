@@ -1,0 +1,36 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #242424;
+    height: calc(100vh - 5.5rem);
+    width: 100%;
+    background-image: url("https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg");
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    & h2 {
+        background-color: white;
+        border: 3px solid #242424;
+        padding: 16px;
+    }
+}
+
+
+.home-button {
+    background-color: white;
+    border: 2px solid #242424;
+    color: #242424;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 2rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #242424;
+        color: white;
+    }
+}
