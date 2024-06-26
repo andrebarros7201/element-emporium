@@ -16,6 +16,21 @@
     margin-top: 2rem;
 }
 
+@media (max-width: 1000px) {
+    .wrapper {
+        flex-flow: column nowrap;
+        width: 500px;
+    }
+
+    .right {
+        padding: 1rem;
+
+        & .right-bottom {
+            align-items: center;
+        }
+    }
+}
+
 .left {
     flex: 1;
     padding: 1rem;
@@ -39,7 +54,8 @@
     flex-flow: column nowrap;
 
     & .right-bottom {
-
+        display: flex;
+        flex-flow: column nowrap;
         padding-bottom: 1rem;
         padding-right: 1rem;
 
