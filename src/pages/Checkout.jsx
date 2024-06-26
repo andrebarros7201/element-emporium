@@ -2,10 +2,14 @@ import { Link, useOutletContext } from "react-router-dom";
 import styles from "../styles/checkout.module.css";
 
 export default function Checkout() {
-  const { cart } = useOutletContext();
+  const { cart, setCart } = useOutletContext();
   const totalCart = parseFloat(
     cart.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2),
   );
+
+  const handleRemoveItem = (item) => {
+    setCart(cart.filter((x) => x.id !== item.id));
+  };
   return (
     <section className={styles.checkout}>
       {cart.length === 0 ? (
@@ -23,11 +27,16 @@ export default function Checkout() {
       {cart.map((item) => (
         <div className={styles["checkout-item"]} key={item.id}>
           <img src={item.image} alt={item.name} />
-
           <div className={styles.right}>
             <h3>{item.name}</h3>
             <p>Price: {item.price}€</p>
             <p>Quantity: {item.quantity}</p>
+            <button
+              className={styles["remove-item"]}
+              onClick={() => handleRemoveItem(item)}
+            >
+              Remove
+            </button>
           </div>
         </div>
       ))}
