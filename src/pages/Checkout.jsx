@@ -22,9 +22,7 @@ export default function Checkout() {
 
       {cart.map((item) => (
         <div className={styles["checkout-item"]} key={item.id}>
-          <div className={styles.left}>
-            <img src={item.image} alt={item.name} />
-          </div>
+          <img src={item.image} alt={item.name} />
 
           <div className={styles.right}>
             <h3>{item.name}</h3>
