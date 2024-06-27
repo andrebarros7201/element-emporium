@@ -15,9 +15,11 @@ export default function Navbar({ cart }) {
           <Link to="shop">Shop</Link>
         </li>
       </ul>
-      <Link to={"checkout"} className={styles["cart-link"]}>
-        Cart:{cart.reduce((total, curr) => total + curr.quantity, 0)}
-      </Link>
+      <div>
+        <Link to={"checkout"} className={styles["cart-link"]}>
+          Cart:{cart.reduce((total, curr) => total + curr.quantity, 0)}
+        </Link>
+      </div>
     </nav>
   );
 }

@@ -59,7 +59,7 @@
     .shopItem {
         & a {
             width: min(80vw, 500px);
-            min-width: 400px;
+            min-width: 300px;
             height: auto;
             flex-direction: column;
             align-items: center;
