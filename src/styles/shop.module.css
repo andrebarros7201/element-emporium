@@ -50,3 +50,18 @@
         }
     }
 }
+
+@media (max-width: 1047px) {
+    .shop {
+        flex-direction: column;
+    }
+
+    .shopItem {
+        & a {
+            width: 400px;
+            height: auto;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
