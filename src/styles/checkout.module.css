@@ -26,6 +26,21 @@
 
 }
 
+@media (max-width: 1000px) {
+    .checkout-item {
+        width: min(90vh, 500px);
+        min-width: 400px;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    .right {
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+}
+
 .right {
     flex: 2;
 }
