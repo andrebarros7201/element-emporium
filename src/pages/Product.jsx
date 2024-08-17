@@ -1,6 +1,7 @@
 import { useOutletContext, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "../styles/product.module.css";
+import Loading from "../components/Loading";
 
 export default function Product() {
   const { id } = useParams();
@@ -58,7 +59,7 @@ export default function Product() {
       .finally(() => setLoading(false));
   }, [id]);
 
-  if (loading) return <h2>Loading...</h2>;
+  if (loading) return <Loading/>;
   if (error) return <h2>{error}</h2>;
   return (
     <div className={styles.product}>
